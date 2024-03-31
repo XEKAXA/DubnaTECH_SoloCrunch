@@ -1,0 +1,119 @@
+Current configuration : 1635 bytes
+!
+version 15.1
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+no service password-encryption
+!
+hostname R1
+!
+!
+!
+enable secret 5 $1$mERr$4dpRATIgxQacPVK0CfNV4/
+!
+!
+!
+!
+!
+!
+no ip cef
+no ipv6 cef
+!
+!
+!
+username admin secret 5 $1$mERr$4C0MjpRmk8.IY5nOjr909.
+!
+!
+license udi pid CISCO2911/K9 sn FTX1524C7Q6-
+!
+!
+!
+!
+!
+!
+!
+!
+!
+ip ssh version 2
+ip domain-name admin
+!
+!
+spanning-tree mode pvst
+!
+!
+!
+!
+!
+!
+interface Loopback0
+ ip address 192.168.100.2 255.255.255.255
+!
+interface GigabitEthernet0/0
+ ip address 11.11.0.2 255.255.0.0
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet0/1
+ ip address 185.31.0.1 255.255.255.128
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet0/2
+ ip address 185.31.128.1 255.255.255.192
+ duplex auto
+ speed auto
+!
+interface FastEthernet0/0/0
+ switchport mode access
+!
+interface FastEthernet0/0/1
+ switchport mode access
+!
+interface FastEthernet0/0/2
+ switchport mode access
+!
+interface FastEthernet0/0/3
+ switchport mode access
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+router ospf 1
+ log-adjacency-changes
+ redistribute bgp 65000 subnets 
+ network 185.31.0.0 0.0.0.127 area 0
+ network 185.31.128.0 0.0.0.63 area 0
+ default-information originate
+!
+router bgp 65000
+ bgp log-neighbor-changes
+ no synchronization
+ neighbor 11.11.0.1 remote-as 65001
+ neighbor 11.13.0.1 remote-as 65002
+ network 185.31.128.0 mask 255.255.255.192
+ network 185.31.0.0 mask 255.255.255.128
+ redistribute ospf 1 
+!
+ip classless
+ip route 0.0.0.0 0.0.0.0 11.11.0.1 
+!
+ip flow-export version 9
+!
+!
+!
+!
+!
+!
+!
+line con 0
+!
+line aux 0
+!
+line vty 0 4
+ login local
+ transport input ssh
+!
+!
+!
+end

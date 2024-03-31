@@ -1,99 +1,105 @@
-Current configuration : 1130 bytes
-!
-version 15.1
-no service timestamps log datetime msec
-no service timestamps debug datetime msec
-no service password-encryption
-!
-hostname Router
-!
-!
-!
-!
-!
-!
-!
-!
-no ip cef
-no ipv6 cef
-!
-!
-!
-!
-license udi pid CISCO2901/K9 sn FTX1524799X-
-!
-!
-!
-!
-!
-!
-!
-!
-!
-!
-!
-spanning-tree mode pvst
-!
-!
-!
-!
-!
-!
-interface GigabitEthernet0/0
- ip address 11.11.0.1 255.255.0.0
- duplex auto
- speed auto
-!
-interface GigabitEthernet0/1
- ip address 11.12.0.1 255.255.0.0
- duplex auto
- speed auto
-!
-interface FastEthernet0/0/0
- switchport access vlan 3
- switchport mode access
-!
-interface FastEthernet0/0/1
- switchport mode access
-!
-interface FastEthernet0/0/2
- switchport mode access
-!
-interface FastEthernet0/0/3
- switchport mode access
-!
-interface Vlan1
- no ip address
- shutdown
-!
-interface Vlan3
- mac-address 0002.4aa2.c001
- ip address 62.10.82.1 255.255.255.0
-!
-router bgp 65001
- bgp log-neighbor-changes
- no synchronization
- neighbor 11.11.0.2 remote-as 65000
- network 11.12.0.0 mask 255.255.0.0
- network 62.10.82.0 mask 255.255.255.0
-!
-ip classless
-!
-ip flow-export version 9
-!
-!
-!
-!
-!
-!
-!
-line con 0
-!
-line aux 0
-!
-line vty 0 4
- login
-!
-!
-!
-end
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <p>
+            Current configuration : 1130 bytes<br/>
+            !<br/>
+            version 15.1<br/>
+            no service timestamps log datetime msec<br/>
+            no service timestamps debug datetime msec<br/>
+            no service password-encryption<br/>
+            !<br/>
+            hostname Router<br/>
+            !<br/>
+            !<br/>
+            !<br/>
+            !<br/>
+            !<br/>
+            !<br/>
+            !<br/>
+            !<br/>
+            no ip cef<br/>
+            no ipv6 cef<br/>
+            !<br/>
+            !<br/>
+            !<br/>
+            license udi pid CISCO2901/K9 sn FTX1524799X-<br/>
+            !<br/>
+            !<br/>
+            !<br/>
+            !<br/>
+            !<br/>
+            !<br/>
+            !<br/>
+            !<br/>
+            !<br/>
+            !<br/>
+            spanning-tree mode pvst<br/>
+            !<br/>
+            !<br/>
+            !<br/>
+            !<br/>
+            !<br/>
+            interface GigabitEthernet0/0<br/>
+             ip address 11.11.0.1 255.255.0.0<br/>
+             duplex auto<br/>
+             speed auto<br/>
+            !<br/>
+            interface GigabitEthernet0/1<br/>
+             ip address 11.12.0.1 255.255.0.0<br/>
+             duplex auto<br/>
+             speed auto<br/>
+            !<br/>
+            interface FastEthernet0/0/0<br/>
+             switchport access vlan 3<br/>
+             switchport mode access<br/>
+            !<br/>
+            interface FastEthernet0/0/1<br/>
+             switchport mode access<br/>
+            !<br/>
+            interface FastEthernet0/0/2<br/>
+             switchport mode access<br/>
+            !<br/>
+            interface FastEthernet0/0/3<br/>
+             switchport mode access<br/>
+            !<br/>
+            interface Vlan1<br/>
+             no ip address<br/>
+             shutdown<br/>
+            !<br/>
+            interface Vlan3<br/>
+             mac-address 0002.4aa2.c001<br/>
+             ip address 62.10.82.1 255.255.255.0<br/>
+            !<br/>
+            router bgp 65001<br/>
+             bgp log-neighbor-changes<br/>
+             no synchronization<br/>
+             neighbor 11.11.0.2 remote-as 65000<br/>
+             network 11.12.0.0 mask 255.255.0.0<br/>
+             network 62.10.82.0 mask 255.255.255.0<br/>
+            !<br/>
+            ip classless<br/>
+            !<br/>
+            ip flow-export version 9<br/>
+            !<br/>
+            !<br/>
+            !<br/>
+            !<br/>
+            !<br/>
+            !<br/>
+            line con 0<br/>
+            !<br/>
+            line aux 0<br/>
+            !<br/>
+            line vty 0 4<br/>
+             login<br/>
+            !<br/>
+            !<br/>
+            !<br/>
+            end<br/>
+        </p>
+    </body>
+</html>

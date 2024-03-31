@@ -1,85 +1,90 @@
-Current configuration : 896 bytes
-!
-version 15.1
-no service timestamps log datetime msec
-no service timestamps debug datetime msec
-no service password-encryption
-!
-hostname Router
-!
-!
-!
-!
-!
-!
-!
-!
-ip cef
-no ipv6 cef
-!
-!
-!
-!
-license udi pid CISCO2901/K9 sn FTX1524HTS9-
-!
-!
-!
-!
-!
-!
-!
-!
-!
-!
-!
-spanning-tree mode pvst
-!
-!
-!
-!
-!
-!
-interface GigabitEthernet0/0
- ip address 11.13.0.1 255.255.0.0
- ip nat outside
- duplex auto
- speed auto
-!
-interface GigabitEthernet0/1
- ip address 192.168.1.1 255.255.255.0
- ip nat inside
- duplex auto
- speed auto
-!
-interface Vlan1
- no ip address
- shutdown
-!
-router bgp 65002
- bgp log-neighbor-changes
- no synchronization
- neighbor 11.13.0.2 remote-as 65000
-!
-ip nat inside source list FOR-NAT interface GigabitEthernet0/0 overload
-ip classless
-!
-ip flow-export version 9
-!
-!
-ip access-list standard FOR-NAT
- permit 192.168.1.0 0.0.0.255
-!
-!
-!
-!
-!
-line con 0
-!
-line aux 0
-!
-line vty 0 4
- login
-!
-!
-!
-end
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <p>
+            Current configuration : 896 bytes<br/>
+            !<br/>
+            version 15.1<br/>
+            no service timestamps log datetime msec<br/>
+            no service timestamps debug datetime msec<br/>
+            no service password-encryption<br/>
+            !<br/>
+            hostname Router<br/>
+            !<br/>
+            !<br/>
+            !<br/>
+            !<br/>
+            !<br/>
+            !<br/>
+            !<br/>
+            ip cef<br/>
+            no ipv6 cef<br/>
+            !<br/>
+            !<br/>
+            !<br/>
+            license udi pid CISCO2901/K9 sn FTX1524HTS9-<br/>
+            !<br/>
+            !<br/>
+            !<br/>
+            !<br/>
+            !<br/>
+            !<br/>
+            !<br/>
+            !<br/>
+            !<br/>
+            spanning-tree mode pvst<br/>
+            !<br/>
+            !<br/>
+            !<br/>
+            !<br/>
+            !<br/>
+            interface GigabitEthernet0/0<br/>
+             ip address 11.13.0.1 255.255.0.0<br/>
+             ip nat outside<br/>
+             duplex auto<br/>
+             speed auto<br/>
+            !<br/>
+            interface GigabitEthernet0/1<br/>
+             ip address 192.168.1.1 255.255.255.0<br/>
+             ip nat inside<br/>
+             duplex auto<br/>
+             speed auto<br/>
+            !<br/>
+            interface Vlan1<br/>
+             no ip address<br/>
+             shutdown<br/>
+            !<br/>
+            router bgp 65002<br/>
+             bgp log-neighbor-changes<br/>
+             no synchronization<br/>
+             neighbor 11.13.0.2 remote-as 65000<br/>
+            !<br/>
+            ip nat inside source list FOR-NAT interface GigabitEthernet0/0 overload<br/>
+            ip classless<br/>
+            !<br/>
+            ip flow-export version 9<br/>
+            !<br/>
+            !<br/>
+            ip access-list standard FOR-NAT<br/>
+             permit 192.168.1.0 0.0.0.255<br/>
+            !<br/>
+            !<br/>
+            !<br/>
+            !<br/>
+            !<br/>
+            line con 0<br/>
+            !<br/>
+            line aux 0<br/>
+            !<br/>
+            line vty 0 4<br/>
+             login<br/>
+            !<br/>
+            !<br/>
+            !<br/>
+            end<br/>
+        </p>
+    </body>
+</html>

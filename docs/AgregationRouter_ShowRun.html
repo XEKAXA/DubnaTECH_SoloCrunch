@@ -1,98 +1,104 @@
-Current configuration : 1229 bytes
-!
-version 15.1
-no service timestamps log datetime msec
-no service timestamps debug datetime msec
-no service password-encryption
-!
-hostname RAgrigate
-!
-!
-!
-enable secret 5 $1$mERr$4dpRATIgxQacPVK0CfNV4/
-!
-!
-!
-!
-!
-!
-ip cef
-no ipv6 cef
-!
-!
-!
-username admin secret 5 $1$mERr$4C0MjpRmk8.IY5nOjr909.
-!
-!
-license udi pid CISCO2911/K9 sn FTX1524U313-
-!
-!
-!
-!
-!
-!
-!
-!
-!
-ip ssh version 2
-ip domain-name admin
-!
-!
-spanning-tree mode pvst
-!
-!
-!
-!
-!
-!
-interface Port-channel1
- ip address 174.23.2.196 255.255.255.192
- ip nat outside
-!
-interface GigabitEthernet0/0
- no ip address
- channel-group 1 mode on
- duplex auto
- speed auto
-!
-interface GigabitEthernet0/1
- no ip address
- channel-group 1 mode on
- duplex auto
- speed auto
-!
-interface GigabitEthernet0/2
- ip address 192.168.1.1 255.255.255.0
- ip nat inside
- duplex auto
- speed auto
-!
-interface Vlan1
- no ip address
- shutdown
-!
-ip nat inside source static 192.168.1.2 174.23.2.196 
-ip nat outside source static tcp 174.23.2.196 80 192.168.1.2 80 
-ip nat outside source static tcp 174.23.2.196 443 192.168.1.2 443 
-ip classless
-ip route 0.0.0.0 0.0.0.0 174.23.2.195 
-!
-ip flow-export version 9
-!
-!
-!
-!
-!
-!
-!
-line con 0
-!
-line aux 0
-!
-line vty 0 4
- login local
- transport input ssh
-!
-!
-!
-end
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <p>
+            Current configuration : 1229 bytes<br/>
+            !<br/>
+            version 15.1<br/>
+            no service timestamps log datetime msec<br/>
+            no service timestamps debug datetime msec<br/>
+            no service password-encryption<br/>
+            !<br/>
+            hostname RAgrigate<br/>
+            !<br/>
+            !<br/>
+            !<br/>
+            enable secret 5 $1$mERr$4dpRATIgxQacPVK0CfNV4/<br/>
+            !<br/>
+            !<br/>
+            !<br/>
+            !<br/>
+            !<br/>
+            ip cef<br/>
+            no ipv6 cef<br/>
+            !<br/>
+            !<br/>
+            !<br/>
+            username admin secret 5 $1$mERr$4C0MjpRmk8.IY5nOjr909.<br/>
+            !<br/>
+            !<br/>
+            license udi pid CISCO2911/K9 sn FTX1524U313-<br/>
+            !<br/>
+            !<br/>
+            !<br/>
+            !<br/>
+            !<br/>
+            !<br/>
+            !<br/>
+            !<br/>
+            ip ssh version 2<br/>
+            ip domain-name admin<br/>
+            !<br/>
+            !<br/>
+            spanning-tree mode pvst<br/>
+            !<br/>
+            !<br/>
+            !<br/>
+            !<br/>
+            !<br/>
+            interface Port-channel1<br/>
+             ip address 174.23.2.196 255.255.255.192<br/>
+             ip nat outside<br/>
+            !<br/>
+            interface GigabitEthernet0/0<br/>
+             no ip address<br/>
+             channel-group 1 mode on<br/>
+             duplex auto<br/>
+             speed auto<br/>
+            !<br/>
+            interface GigabitEthernet0/1<br/>
+             no ip address<br/>
+             channel-group 1 mode on<br/>
+             duplex auto<br/>
+             speed auto<br/>
+            !<br/>
+            interface GigabitEthernet0/2<br/>
+             ip address 192.168.1.1 255.255.255.0<br/>
+             ip nat inside<br/>
+             duplex auto<br/>
+             speed auto<br/>
+            !<br/>
+            interface Vlan1<br/>
+             no ip address<br/>
+             shutdown<br/>
+            !<br/>
+            ip nat inside source static 192.168.1.2 174.23.2.196<br/>
+            ip nat outside source static tcp 174.23.2.196 80 192.168.1.2 80<br/>
+            ip nat outside source static tcp 174.23.2.196 443 192.168.1.2 443<br/>
+            ip classless<br/>
+            ip route 0.0.0.0 0.0.0.0 174.23.2.195<br/>
+            !<br/>
+            ip flow-export version 9<br/>
+            !<br/>
+            !<br/>
+            !<br/>
+            !<br/>
+            !<br/>
+            !<br/>
+            line con 0<br/>
+            !<br/>
+            line aux 0<br/>
+            !<br/>
+            line vty 0 4<br/>
+             login local<br/>
+             transport input ssh<br/>
+            !<br/>
+            !<br/>
+            !<br/>
+            end<br/>
+        </p>
+    </body>
+</html>
